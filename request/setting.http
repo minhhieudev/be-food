@@ -1,0 +1,91 @@
+@baseUrl=http://localhost:3001
+@accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRmZjY0NGMwZjY3MWE3NjNkMjNmNjMiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTY1MTY4MzQsImV4cCI6MTcxNjYwMzIzNH0.oGgrK6uhSrP2Xk1zNxpXqXFQXpavuy9IKySerANePDs
+
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjNlZWJhY2EwNDQ5NDFiZmU5YzMwYzEiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxNjk2NTY1MywiZXhwIjoxNzE5NTU3NjUzfQ.lxlIxIy-GSJRILXoEme2uq1IS-cQLzKKRVOOfL22ucs
+
+### Get setting
+### query: keys
+GET {{baseUrl}}/api/settings?keys=depositDiscount
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+### Get setting
+### query: keys
+GET {{baseUrl}}/api/settings/ongtrum/getImportServiceList
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Get qr by customer
+GET {{baseUrl}}/api/settings/customer/get-qr-bank/500000
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+### Get setting by customer
+GET {{baseUrl}}/api/settings/customer?keys=depositDiscount
+Content-Type: application/json
+
+### Update settting
+###
+PUT {{baseUrl}}/api/settings
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+    "updateData": [
+        {
+            "key": "geminiApiKey",
+            "value": "AIzaSyCrMk8piaAt13lsYiniAX17tmK2rzmuUJc"
+        },
+        {
+            "key": "PARTNER_ONGTRUM_API_KEY",
+            "value": ""
+        },
+        {
+            "key": "depositDiscount",
+            "value": [
+                {
+                    "amount": 1000,
+                    "discountPercent": 10
+                },
+                 {
+                    "amount": 20000,
+                    "discountPercent": 50
+                }
+            ]
+        },
+         {
+            "key": "bankSuffix",
+            "value": "OD"
+        },
+          {
+            "key": "bankPrefix",
+            "value": "PRE"
+        },
+          {
+            "key": "isUseBank",
+            "value": true
+        }
+        ,
+          {
+            "key": "bankAccountName",
+            "value": "MINH HUE"
+        },
+         {
+            "key": "bankAccountNumber",
+            "value": "0868299812"
+        },
+         {
+            "key": "bankId",
+            "value": "970436"
+        }
+    ]
+}
+
+### Get service-name-key data
+GET {{baseUrl}}/api/settings/translate-data
+Content-Type: application/json
+
+### Get service-name-key data
+GET {{baseUrl}}/admin-api/settings/getPaymentActivity/ongtrum
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}

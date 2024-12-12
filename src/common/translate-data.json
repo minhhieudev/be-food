@@ -1,0 +1,138 @@
+{
+  "buff": {
+    "vi": "tăng",
+    "en": "buff"
+  },
+  "live": {
+    "vi": "mắt",
+    "en": "live"
+  },
+  "like": {
+    "vi": "lượt thích",
+    "en": "like"
+  },
+  "likecmt": {
+    "vi": "thích bình luận",
+    "en": "likes and comments"
+  },
+  "sub": {
+    "vi": "theo dõi",
+    "en": "subcrise"
+  },
+  "friend": {
+    "vi": "bạn bè",
+    "en": "friends"
+  },
+  "share": {
+    "vi": "chia sẻ",
+    "en": "sharing"
+  },
+  "cmt": {
+    "vi": "bình luận",
+    "en": "comments"
+  },
+  "likepage": {
+    "vi": "lượt thích trang",
+    "en": "Page likes"
+  },
+  "ratepage": {
+    "vi": "đánh giá trang",
+    "en": "Page rate"
+  },
+  "memgroups": {
+    "vi": "thành viên nhóm",
+    "en": "group membership"
+  },
+  "view": {
+    "vi": "lượt xem",
+    "en": "views"
+  },
+  "viewstory": {
+    "vi": "lượt xem câu chuyện",
+    "en": "story views"
+  },
+  "likengoai": {
+    "vi": "lượt thích nước ngoài",
+    "en": "foreign likes"
+  },
+  "likepagengoai": {
+    "vi": "lượt thích page nước ngoài",
+    "en": "foreign page likes"
+  },
+  "subngoai": {
+    "vi": "lượt theo dõi nước ngoài",
+    "en": "foreign subcrises"
+  },
+  "likefree": {
+    "vi": "lượt thích miễn phí",
+    "en": "likes for free"
+  },
+  "subpage": {
+    "vi": "lượt theo dõi trang",
+    "en": "subcrises page"
+  },
+  "save": {
+    "vi": "lượt lưu",
+    "en": "save"
+  },
+  "likepro": {
+    "vi": "lượt thích chuyên nghiệp",
+    "en": "like pro"
+  },
+  "likegiare": {
+    "vi": "lượt thích giá rẻ",
+    "en": "cheap likes"
+  },
+  "likegroups": {
+    "vi": "lượt thích nhóm",
+    "en": "group likes"
+  },
+  "livepro": {
+    "vi": "mắt chuyên nghiệp",
+    "en": "live pro"
+  },
+  "sell": {
+    "vi": "bán",
+    "en": "sell"
+  },
+  "uid": {
+    "vi": "UID",
+    "en": "UID"
+  },
+  "clone": {
+    "vi": "clone",
+    "en": "clone"
+  },
+  "buy": {
+    "vi": "bán",
+    "en": "buy"
+  },
+  "live2": {
+    "vi": "mắt kênh 2",
+    "en": "live2"
+  },
+  "likelive": {
+    "vi": "lượt thích phát sóng trực tiếp",
+    "en": "live likes"
+  },
+  "sharelive": {
+    "vi": "chia sẻ phát sóng trực tiếp",
+    "en": "share livestream"
+  },
+  "download": {
+    "vi": "lượt tải xuống",
+    "en": "download"
+  },
+  "view4k": {
+    "vi": "lượt xem 4k",
+    "en": "views 4k"
+  },
+  "other": {
+    "vi": "khác",
+    "en": "other"
+  },
+  "mem": {
+    "vi": "thành viên",
+    "en": "member"
+  }
+}

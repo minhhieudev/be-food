@@ -1,0 +1,21 @@
+@baseUrl=http://localhost:3001
+@accessToken=67c00868dee98ebf42877614b897f11a9e560956716b37cf43cc4d7233ff9893f1cd6a730773a6540e211b9b940315da
+### 
+GET {{baseUrl}}/public-api/service-packages
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+### 
+POST {{baseUrl}}/api/users/create-order
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+### 
+GET {{baseUrl}}/api/users/get-balance
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+### 
+GET {{baseUrl}}/api/users/get-order-status/664726412298769ca1be743b
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}

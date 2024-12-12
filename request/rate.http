@@ -1,0 +1,27 @@
+@baseUrl=http://localhost:3001
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjIzN2YxYTU3NGQ2NTYyMzJkODdiMjAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2cxQGdtYWlsLmNvbSIsImN1cnJlbmN5IjoiVk5EIiwiaWF0IjoxNzE1NjU5Mjc3LCJleHAiOjE3MTU3NDU2Nzd9.-sKzOlK7wueGKEMuNDeYRI3_qlO_7YCkUwVesdifYZQ
+
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAyMzRkYTUwYzNlNzdkNDQzOWExYzMiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxMjExMDQwNSwiZXhwIjoxNzE0NzAyNDA1fQ.K4fAVf-wc-9sAyGoxODarC7APLZcdFzTyfLiWh1HAIM
+
+###
+POST {{baseUrl}}/api/rates
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "type": "recharge",
+  "order": {
+    "id": "81904907JK786111K",
+    "type":"paypal"
+  }
+}
+
+###
+GET {{baseUrl}}/api/rates
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+###
+GET {{baseUrl}}/api/rates/detail
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}

@@ -1,0 +1,11 @@
+@baseUrl=http://localhost:3002
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA1MTRlMTJlOGUwODc5YzIzZjAzMjgiLCJ1c2VybmFtZSI6ImN1c3RvbWVyMDIiLCJpYXQiOjE3MTE3ODExMjQsImV4cCI6MTcxMTg2NzUyNH0.twTfeUQe3yUEO9SUV4GXFiEwVHfOwbahwmrpGoX6wDc
+
+###
+GET {{baseUrl}}/api/wallets
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+
+
+

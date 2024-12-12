@@ -1,0 +1,36 @@
+@baseUrl=http://localhost:3001
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWZlNGU5YWY0MWI2NmYyODZmNGM0ZjAiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxNDYzMzc4NSwiZXhwIjoxNzE3MjI1Nzg1fQ.GHS_oUbJ9lfqsoS58Ec_OP-NMCNBSVa_7AXiLNQCBoY
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjNiMmU2MjkzYTVhMTIyNDg0YzMzYjUiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2cxQGdtYWlsLmNvbSIsImN1cnJlbmN5IjoiVk5EIiwiaWF0IjoxNzE1Mzk5MTQyLCJleHAiOjE3MTU0ODU1NDJ9.zZnQjbU1im7v52CUQGtmYRZONoGpMjewxhxeGsxIQgA
+
+###
+GET {{baseUrl}}/api/service-groups/customers
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+###
+GET {{baseUrl}}/api/service-groups/scriptGroupCode?partnerCode=ongtrum
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+###
+## Get service groups
+GET {{baseUrl}}/api/service-groups
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+
+### Create a new service groups
+POST {{baseUrl}}/api/service-groups
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+    "name": "service group new"
+}
+
+## Delêt service groups
+###
+DELETE {{baseUrl}}/api/service-groups/6610ff160f3eeb14ab256d40
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+

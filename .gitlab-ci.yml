@@ -1,0 +1,15 @@
+include:
+  - project: 'devops/base-ci'
+    file: 'ci.yml'
+build_dev:
+  extends: .build
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+deploy_to_dev:
+  extends: .deploy
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+  variables:
+    SERVICE_PORT: 3000
+    ENABLE_INGRESS: "true"
+    INGRESS_DOMAIN: scadmin-api.mstapp.shop

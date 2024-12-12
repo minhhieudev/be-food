@@ -1,0 +1,19 @@
+@baseUrl=http://localhost:3001
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAyMzRkYTUwYzNlNzdkNDQzOWExYzMiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxMTU5OTc5MywiZXhwIjoxNzE0MTkxNzkzfQ.5y4RnB8lDmSQFiuNtMwcApG6pU0cUhMH8I91YWmBsfw
+
+### Say hi
+GET  {{baseUrl}}/api/keyword-tools/call?keyword=chúng ta của tương lai
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Say hi
+GET  {{baseUrl}}/api/keyword-tools/youtube-list?keyword=bo gia
+
+### Say hi
+GET  {{baseUrl}}/api/keyword-tools/youtube-detail
+
+### Say hi
+GET  {{baseUrl}}/api/keyword-tools/tiktok?keyword=mtp
+
+### Say hi
+GET  {{baseUrl}}/api/keyword-tools/dailymotion?keyword=Trương Mỹ Lan

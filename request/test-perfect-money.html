@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form action="https://perfectmoney.com/api/step1.asp" method="POST">
+      <input type="hidden" name="PAYEE_ACCOUNT" value="U47761710" />
+      <input type="hidden" name="PAYEE_NAME" value="MST" />
+      <input type="hidden" name="PAYMENT_ID" value="664abce5e205eb43355c50ed" />
+      <input type="hidden" name="PAYMENT_AMOUNT" value="1" />
+      <input type="hidden" name="PAYMENT_UNITS" value="USD" />
+      <input
+        type="hidden"
+        name="STATUS_URL"
+        value="https://scadmin-api.mstapp.shop/api/perfect-money/check"
+      />
+      <input
+        type="hidden"
+        name="PAYMENT_URL"
+        value="https://tool.mstapp.shop/statistic"
+      />
+      <input type="hidden" name="PAYMENT_URL_METHOD" value="GET" />
+      <input
+        type="hidden"
+        name="NOPAYMENT_URL"
+        value="https://tool.mstapp.shop/payment"
+      />
+      <input type="hidden" name="NOPAYMENT_URL_METHOD" value="GET" />
+      <input type="hidden" name="SUGGESTED_MEMO" value="" />
+      <input type="hidden" name="BAGGAGE_FIELDS" value="" />
+      <input type="submit" name="PAYMENT_METHOD" value="Nạp ngay" />
+   </form>
+  </body>
+</html>

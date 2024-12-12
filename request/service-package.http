@@ -1,0 +1,177 @@
+@baseUrl=http://localhost:3001
+
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlYWM5ZDQ4NTRmNjlhODQxMzc1NTAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTc0ODA2MTEsImV4cCI6MTcxNzU2NzAxMX0.MgrauBn52E2LVr1BmsMnMN7mAqlhoedLgWtbIzV7TZU
+
+
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQyZWU0ZWNhYTY0ZThkMjQ2OTZmYTkiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxNjI2MjA5MiwiZXhwIjoxNzE4ODU0MDkyfQ.wk8-X16swVmu1mBRCrCu-CI8E55fO4kyTzjlAFwMpyM
+
+### Get All by customer
+### Filter: scriptGroupCode, serviceGroupID, search
+### scriptGroupCode: facebook, youtube, google, tiktok
+### serviceGroupID: API: api/service-groups/customers
+GET {{baseUrl}}/api/service-packages/customers
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### Get one by customer
+GET {{baseUrl}}/api/service-packages/customers/665e97eeb40d21bdbbec41a4
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### HOT
+GET  {{baseUrl}}/api/service-packages/customers/hot
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+###-------------ADMIN API---------------------------------
+### Get all service packages
+GET {{baseUrl}}/api/service-packages
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Get service package by ID
+GET {{baseUrl}}/api/service-packages/661110c49b20bfc0d366e2a0
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+
+### Update Service package
+PUT {{baseUrl}}/api/service-packages/660d1ed1326fbd10d1d13964
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "status": false,
+  "attributes": [
+        {
+            "label": "a",
+            "code": "code 1",
+            "description": "description 1",
+            "dataType": "text",
+            "required": true
+        },
+         {
+            "label": "a",
+            "code": "a",
+            "description": "description 1",
+            "dataType": "text",
+            "required": true
+        }
+    ]
+}
+
+### 
+### Create a new service package
+POST {{baseUrl}}/api/service-packages
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+    "name": "Like facebook",
+    "code": "sv2",
+    "description": "this is description of service package 1",
+    "orderSuccessDescription": "none",
+    "scriptGroupCode": "facebook",
+    "serviceGroupID": "660645af7d9bc72963c49dcd",
+    "serviceTags": ["tag one"],
+    "unit": "a",
+    "price": 12,
+    "vipPrice": 12,
+    "originPrice": 1,
+    "status": true,
+    "type": "apiKey",
+    "scriptCode": "ongtrum_10101029",
+    "partnerServiceID": "10101029",
+    "partnerCode": "ongtrum",
+    "attributes": [
+        {
+            "label": "Link",
+            "code": "link",
+            "description": "link",
+            "dataType": "text",
+            "required": true
+        }
+    ],
+    "isBestSellers": true
+}
+
+### 
+### bulk create service package
+POST {{baseUrl}}/api/service-packages/bulk-create
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+    "data": [
+        {
+            "name": "Like facebook",
+            "code": "sv2",
+            "description": "this is description of service package 1",
+            "orderSuccessDescription": "none",
+            "scriptGroupCode": "facebook",
+            "serviceCode": "facebook_new_test",
+            "serviceTags": ["tag one"],
+            "unit": "a",
+            "price": 12,
+            "vipPrice": 12,
+            "originPrice": 1,
+            "status": true,
+            "type": "apiKey",
+            "scriptCode": "ongtrum_10101029",
+            "partnerServiceID": "10101029",
+            "partnerCode": "ongtrum",
+            "attributes": [
+                {
+                    "label": "Link",
+                    "code": "link",
+                    "description": "link",
+                    "dataType": "text",
+                    "required": true
+                }
+            ],
+            "isBestSellers": true
+        },
+        {
+            "name": "Like facebook 222",
+            "code": "sv2",
+            "description": "this is description of service package 1",
+            "orderSuccessDescription": "none",
+            "scriptGroupCode": "facebook",
+            "serviceCode": "facebook_new22_test333",
+            "serviceTags": ["tag one"],
+            "unit": "a",
+            "price": 12,
+            "vipPrice": 12,
+            "originPrice": 1,
+            "status": true,
+            "type": "apiKey",
+            "scriptCode": "ongtrum_10101029",
+            "partnerServiceID": "10101029",
+            "partnerCode": "ongtrum",
+            "attributes": [
+                {
+                    "label": "Link",
+                    "code": "link",
+                    "description": "link",
+                    "dataType": "text",
+                    "required": true
+                }
+            ],
+            "isBestSellers": true
+        }
+    ]
+    
+}
+
+
+
+### Delete service package by partnerCode
+DELETE  {{baseUrl}}/api/service-packages/remove-partner/ongtrum
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Delete service package by ID 
+DELETE  {{baseUrl}}/api/service-packages/6602533fbffe2adff9c3d5fe
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+

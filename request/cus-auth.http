@@ -1,0 +1,121 @@
+@baseUrl=http://localhost:3001
+@accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRmZmYxMGVjNWEyZjQwZTIyMGRhNjAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTgyNDY3MjgsImV4cCI6MTcxODMzMzEyOH0.GTv0b4xHpeLvf2Poq-E7PVv3365ZKxoMNgORmpqW9uQ
+
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQyZWU0ZWNhYTY0ZThkMjQ2OTZmYTkiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxNjUxNzAzNiwiZXhwIjoxNzE5MTA5MDM2fQ.UD_MJaQHpwy18J_0O2fiT60gYrGvDSJE8-DIvqjVuVQ
+
+### Đăng nhập
+POST {{baseUrl}}/frontend-api/customer-auth/login
+Content-Type: application/json
+
+{
+    "email":"minhhuehoangg@gmail.com",
+    "password":"654321"
+}
+
+### Đăng nhập bằng google, xác thực google token
+POST {{baseUrl}}/frontend-api/customer-auth/google-login
+Content-Type: application/json
+
+{
+    "token":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjZjZTExYWVjZjllYjE0MDI0YTQ0YmJmZDFiY2Y4YjMyYTEyMjg3ZmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI0Mzg2NjI5NDc0NzYtdDVnYzh0MnJpYTY2dnBwaGlpb2sxNTdhNjEwOWs1MDAuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0Mzg2NjI5NDc0NzYtdDVnYzh0MnJpYTY2dnBwaGlpb2sxNTdhNjEwOWs1MDAuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDk2MzI1NTI1MTkzNzU2NDg1OTIiLCJlbWFpbCI6ImNoYWkuMjIwNTkwQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYmYiOjE3MTMzNDIxODIsIm5hbWUiOiJDaGFpIHdhbiAoQ2hhaXdhbikiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSlR5OGVoanB2RmZrVkE5cElXbmt1d1dxMGtQN1NzMU5uRDlwZ0NxcGNXRTV1cGZGemc9czk2LWMiLCJnaXZlbl9uYW1lIjoiQ2hhaSIsImZhbWlseV9uYW1lIjoid2FuIiwiaWF0IjoxNzEzMzQyNDgyLCJleHAiOjE3MTMzNDYwODIsImp0aSI6ImVlYmRiNWY3NmJkMjkxOTU2YTBiOWM5NjgyYzAzMzcyMjdmNzg0MDMifQ.CIVAQ19fjapWrPPc3ZjV6J7Rk67uGSc3LLi-PfIWfwo45qihPqCWsQtCI1cQVmRR0s8yeBFAxzwUnm8EJC0ZYZBqliC2mmHgTV34cWU6B1Ff6uZyJIi3sr7U3gEh0f8BxrEx-JNf53w7i-SERZ_um4abFhF0X6aJYmL0r-ez2rXvB8zc1Li37UUG6OXO59og9FfLKKlQNgkeixttVQZTxycYJoKqK7aq1dMbEAg1aDaBAIWKYfLiiQIO4GSULiKRyHFY90ZyL4n6gpUE9hMmPFs4uqEvxRA_9W0v36y3VWECe5guuNmLk-Mc17zajd2oNXvxLne4DIEYX6vQYyQsDA"
+
+}
+
+
+### Đăng nhập
+POST {{baseUrl}}/frontend-api/customer-auth/register
+Content-Type: application/json
+
+{
+    "email":"minhhuehoangg@gmail.com",
+    "password":"123456"
+}
+
+
+### recharge
+POST  {{baseUrl}}/frontend-api/payment/recharge
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "type":"recharge",
+    "order":{
+        "type":"paypal",
+        "id":"81904907JK786111K"
+    }
+}
+
+### Đổi mật khẩu
+POST {{baseUrl}}/frontend-api/customer-auth/change-password
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+    "oldPassword":"123",
+    "newPassword":"1234"
+}
+
+
+### Đăng ký tài khoản
+POST {{baseUrl}}/frontend-api/customer-auth/send-otp-register
+Content-Type: application/json
+
+{
+    "email":"minhhuehoangg@gmail.com" 
+}
+
+
+### Xác thực OTP
+POST {{baseUrl}}/frontend-api/customer-auth/verify-otp
+Content-Type: application/json
+
+{
+    "email":"minhhuehoangg@gmail.com",
+    "otp": 303631
+}
+
+### Tạo mật khẩu
+POST {{baseUrl}}/frontend-api/customer-auth/create-password
+Content-Type: application/json
+
+{
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwib3RwIjozMDM2MzEsImlhdCI6MTcxMjk4MTI4NSwiZXhwIjoxNzEyOTgxNTg1fQ.bVSu3bN5SuW0xLww723KUwEekhkkRYTHyYkmO-xSgQ0",
+    "password": "123456"
+}
+
+
+### Gửi OTP cập nhật mật khẩu
+POST {{baseUrl}}/frontend-api/customer-auth/send-otp-update-pass
+Content-Type: application/json
+
+{
+    "email": "minhhuehoangg@gmail.com"
+}
+
+### Verify OTP
+POST {{baseUrl}}/frontend-api/customer-auth/verify-otp
+Content-Type: application/json
+
+{
+    "email":"minhhuehoangg@gmail.com",
+    "otp": 842529
+}
+
+### Đổi mật khẩu bằng OTP
+POST {{baseUrl}}/frontend-api/customer-auth/update-pass-by-otp
+Content-Type: application/json
+
+{
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwib3RwIjo4NDI1MjksImlhdCI6MTcxNzk4MzcxMSwiZXhwIjoxNzE3OTg0MDExfQ.NWjoa3UhFhH7BT9MEd2LveMuUaiTrNU70x9DO8phdmc",
+    "password": "654321"
+}
+
+### Clear Customer
+GET {{baseUrl}}/api/customer/clear
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+### Đổi mật khẩu bằng OTP
+POST {{baseUrl}}/frontend-api/customer-auth/refresh-api-key
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}

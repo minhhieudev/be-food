@@ -1,0 +1,46 @@
+[
+    {
+        "key": "isUsePaypal",
+        "value": ""
+    },
+    {
+        "key": "paypalClientID",
+        "value": ""
+    },
+    {
+        "key": "paypalClientSecret",
+        "value": ""
+    },
+    {
+        "key": "systemName",
+        "value": ""
+    },
+    {
+        "key": "systemDescription",
+        "value": ""
+    },
+    {
+        "key": "facebook",
+        "value": ""
+    },
+    {
+        "key": "zalo",
+        "value": ""
+    },
+    {
+        "key": "telegram",
+        "value": ""
+    },
+    {
+        "key": "phoneNumber",
+        "value": ""
+    },
+    {
+        "key": "chatGPT_APIKey",
+        "value": ""
+    },
+    {
+        "key": "PARTNER_1dg.me_API_KEY",
+        "value": ""
+    }
+]

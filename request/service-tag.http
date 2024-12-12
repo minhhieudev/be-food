@@ -1,0 +1,19 @@
+@baseUrl=http://localhost:3002
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAyMzRkYTUwYzNlNzdkNDQzOWExYzMiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxMTU5OTc5MywiZXhwIjoxNzE0MTkxNzkzfQ.5y4RnB8lDmSQFiuNtMwcApG6pU0cUhMH8I91YWmBsfw
+
+### Get service tags
+GET {{baseUrl}}/api/service-tags
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+
+### Create a new service tags
+POST {{baseUrl}}/api/service-tags
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+    "name": "service tag 1"
+}
+
+

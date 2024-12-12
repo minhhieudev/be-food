@@ -1,0 +1,10 @@
+@baseUrl=http://localhost:3001
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAyMzRkYTUwYzNlNzdkNDQzOWExYzMiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxMTU5OTc5MywiZXhwIjoxNzE0MTkxNzkzfQ.5y4RnB8lDmSQFiuNtMwcApG6pU0cUhMH8I91YWmBsfw
+
+### Get keyword 
+GET {{baseUrl}}/api/keyword-tools/collected-keyword
+Content-Type: application/json
+
+
+### Get keyword 
+GET {{baseUrl}}/api/keyword-tools/collected-keyword/run-cron

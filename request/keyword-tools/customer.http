@@ -1,0 +1,12 @@
+@baseUrl=http://localhost:3001
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRmZmYxMGVjNWEyZjQwZTIyMGRhNjAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTc2NjYxMzUsImV4cCI6MTcxNzc1MjUzNX0.mkV5H8sTUsUMf7yF8f1wBjskhxI6if8ShUQlz3kwlpY
+
+### Download video 
+POST  {{baseUrl}}/api/keyword-tools/customers/download-video
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+{
+  "url": "https://www.facebook.com/watch?v=1399197411478908"
+}
+

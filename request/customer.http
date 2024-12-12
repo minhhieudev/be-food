@@ -1,0 +1,43 @@
+@baseUrl=http://localhost:3001
+
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjVlYWM5ZDQ4NTRmNjlhODQxMzc1NTAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTc0ODA2MTEsImV4cCI6MTcxNzU2NzAxMX0.MgrauBn52E2LVr1BmsMnMN7mAqlhoedLgWtbIzV7TZU
+
+
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQyZWU0ZWNhYTY0ZThkMjQ2OTZmYTkiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxNjI2MjA5MiwiZXhwIjoxNzE4ODU0MDkyfQ.wk8-X16swVmu1mBRCrCu-CI8E55fO4kyTzjlAFwMpyM
+
+
+### Create a new service groups
+POST {{baseUrl}}/admin-api/customer/664fff10ec5a2f40e220da60/block
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+    "reasonBlock": "Thich thi khoa",
+    "status": "block"
+}
+
+### Create a new service groups
+POST {{baseUrl}}/admin-api/customer/664fff10ec5a2f40e220da60/restore
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Create a new service groups
+GET {{baseUrl}}/api/customer/663eee1d71ba1204f4986229
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Create a new service groups
+PUT {{baseUrl}}/api/customer
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+{
+    "currency": "6619dddcebc64502a4ffff22"
+}
+
+
+### Create a new service groups
+GET {{baseUrl}}/api/customer/menu-services
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+

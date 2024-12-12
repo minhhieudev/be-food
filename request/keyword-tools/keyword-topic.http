@@ -1,0 +1,63 @@
+@baseUrl=http://localhost:3001
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjZhNzA0YWY4MTc5MDhmNjAzNWM4ZGMiLCJ1c2VybmFtZSI6ImRlbW8wMiIsImlhdCI6MTcxODI1MTYwNCwiZXhwIjoxNzIwODQzNjA0fQ.AODbfV86cpM1mLiB6DKnOkjxy7uM6dj7OzchYG67jbY
+
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRmZmYxMGVjNWEyZjQwZTIyMGRhNjAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTgyNTk3NDgsImV4cCI6MTcxODM0NjE0OH0.dpaFNETOdk3wrueQVYu-oXKAG4Jy-MB0gwOcQdCXXZ4
+
+### Get topic
+GET {{baseUrl}}/admin-api/kwt/topic
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Get keyword 
+POST {{baseUrl}}/admin-api/kwt/topic
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+    "topicName": "HỒ YÊU TIỂU HỒNG NƯƠNG NGUYỆT"
+}
+
+### get by id
+GET {{baseUrl}}/admin-api/kwt/topic/6613a29780a1f5e99807ce85
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Get keyword 
+PUT {{baseUrl}}/admin-api/kwt/topic/6613a29780a1f5e99807ce85
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+    "isEnabled": true
+}
+
+### get by id
+DELETE {{baseUrl}}/api/keyword-tools/topic/66137912fa43ccd89fb46680
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+
+
+### Get topic by customer
+GET {{baseUrl}}/frontend-api/kwt/topic/customer?page=1&pageSize=20&search=
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### Get topic detail
+GET {{baseUrl}}/frontend-api/kwt/topic/customer/666a717cf817908f6035c8f9
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### follow a topic
+PUT {{baseUrl}}/api/keyword-tools/topic/customer/follow
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+{
+    "topicID": "664479e3734794bd9e4aedc7"
+}
+
+### Get topic followed
+GET {{baseUrl}}/api/keyword-tools/topic/customer/followed
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}

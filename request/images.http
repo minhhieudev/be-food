@@ -1,0 +1,5 @@
+@baseUrl=http://localhost:3001
+
+### Hiển thị hình ảnh
+GET {{baseUrl}}/frontend-api/images/services/youtube.png
+Content-Type: application/json

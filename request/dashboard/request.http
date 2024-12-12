@@ -1,0 +1,38 @@
+@baseUrl=http://localhost:3001
+
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjNlZWJhY2EwNDQ5NDFiZmU5YzMwYzEiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxNzU1ODIzMSwiZXhwIjoxNzIwMTUwMjMxfQ.Mvq-cHOOaw2lT6jjiWMEKs-Pl4PNBYLlUbQQ55426Vg
+
+###
+GET {{baseUrl}}/admin-api/dashboard/statistical/system
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+###
+GET {{baseUrl}}/admin-api/dashboard/statistical/order?type=0&dataType=money
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+###
+GET {{baseUrl}}/admin-api/dashboard/statistical/platform?type=1
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+###
+GET {{baseUrl}}/admin-api/dashboard/statistical/partner?type=2&dataType=order
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+###
+GET {{baseUrl}}/admin-api/dashboard/list/services?type=0&pageSize=10&page=1
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+###
+GET {{baseUrl}}/admin-api/dashboard/list/customer-order?type=0
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+###
+GET {{baseUrl}}/admin-api/dashboard/list/customer-recharge?type=2
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}

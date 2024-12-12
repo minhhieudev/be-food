@@ -1,0 +1,91 @@
+@baseUrl=http://localhost:3001
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRmZmYxMGVjNWEyZjQwZTIyMGRhNjAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTg0MjY1NTMsImV4cCI6MTcxODUxMjk1M30.LJrUP27UL3v7LZEllfCi5OTmipKhY6YUngUOIaK2G1o
+
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAyMzRkYTUwYzNlNzdkNDQzOWExYzMiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxMTk2MjAxNiwiZXhwIjoxNzE0NTU0MDE2fQ.HOZPqbqCGakLe5CrxeopNH5DOe9rWipN1UeV1MQ5zBQ
+
+### Them 1 don hang
+POST {{baseUrl}}/frontend-api/orders
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+{
+    "serviceID": "666cf7e9bbca7c191ab0e231",
+    "qty": 1,
+    "intervalTime": 60,
+    "customerEnteredValues": [
+        {
+            "attributeCode":"link",
+            "enteredValue": "https://www.facebook.com/photo/?fbid=761880809453428&set=a.568221492152695"
+        },
+        {
+            "attributeCode":"service_channel",
+            "enteredValue": "10101020"
+        }
+        ],
+    "comments": ["This is a comment"]
+}
+
+### Them nhieu don hang
+POST {{baseUrl}}/api/orders/many
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+{
+    "list": [
+       {
+        "serviceID": "6602533fbffe2adff9c3d5fe",
+        "qty": 2,
+        "customerEnteredValues": [
+            {
+                "attributeCode": "label 1",
+                 "enteredValue": "hi hi"
+             }
+        ]
+       }
+    ]
+}
+
+### Hien thi danh sach dich vu da mua   
+### query: search, page, pageSize   
+GET {{baseUrl}}/api/orders?status
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### Get orders status   
+POST {{baseUrl}}/frontend-api/orders/status  
+Content-Type: application/json  
+Authorization: Bearer {{customerToken}} 
+
+{   
+    "orderIds": ["66601f24c8304ba980fec37a"]    
+}
+
+### Hien thi danh sach dich vu da mua 
+### query: status
+GET {{baseUrl}}/api/orders/statistic?status=running
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### query: search, page, pageSize
+GET {{baseUrl}}/frontend-api/orders/660f66015c657a055332e48d
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+
+###------------------------------- ADMIN ---------------------------------------
+### Hien thi danh sach dich vu da mua 
+### query: search, page, pageSize, code, customerName
+GET {{baseUrl}}/api/orders/admin?customer=660514e12e8e0879c23f0328&code=59950
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### ADMIN
+### Get by ID
+GET {{baseUrl}}/api/orders/admin/6605155e2e8e0879c23f0333
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### clear all
+DELETE  {{baseUrl}}/api/orders/delete-all
+Content-Type: application/json
+

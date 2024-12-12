@@ -1,0 +1,1 @@
+export const rechageEnum = ["paypal", "bank", "perfectMoney", "admin"];

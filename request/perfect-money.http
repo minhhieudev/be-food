@@ -1,0 +1,11 @@
+@baseUrl=http://localhost:3001
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRmZmYxMGVjNWEyZjQwZTIyMGRhNjAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTY4MDI1MDAsImV4cCI6MTcxNjg4ODkwMH0.fgbv2YTcGtxqTDvT7h_U3xnTd8Ijlfj-r1G9IvO2uRw
+
+### get form 
+POST {{baseUrl}}/api/perfect-money/get-form
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+{
+  "amount": 5
+}

@@ -1,0 +1,18 @@
+@baseUrl=https://scadmin-api.mstapp.shop
+
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ0YjI3MjkyMGY2ZTBkZmFkMjU5MDIiLCJlbWFpbCI6Im50bGFuLml0QGdtYWlsLmNvbSIsImN1cnJlbmN5IjoiNjY0NGE3Y2E5MjBmNmUwZGZhZDI1ODY0IiwiaWF0IjoxNzE4MjUwMzMzLCJleHAiOjE3MTgzMzY3MzN9._ipmF7ofapP_iWPguGmzDJfktJvkN2tW1lfA10lYx54
+
+### download mp3 audio
+GET {{baseUrl}}/frontend-api/kwt/video/download-audio?platform=youtube&videoId=STdP66yTQy8
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### Get content 
+GET {{baseUrl}}/frontend-api/kwt/video/content?platform=youtube&videoId=STdP66yTQy8
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### Get summary-content 
+GET {{baseUrl}}/frontend-api/kwt/video/summary-content?platform=youtube&videoId=STdP66yTQy8
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}

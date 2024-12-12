@@ -1,0 +1,20 @@
+@baseUrl=http://localhost:3000
+
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAyMzRkYTUwYzNlNzdkNDQzOWExYzMiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxMTk0MTY4MSwiZXhwIjoxNzE0NTMzNjgxfQ.bYYBFOyMhxgdr0Rp_0ne-5DOEPiBBj8443G4yfWBDXg
+
+### Upload images
+POST {{baseUrl}}/api/uploads/image
+Content-Type: application/json
+Authorization: Bearer {adminToken}}
+{
+    "file": ,
+}
+
+
+### Get an image
+GET {{baseUrl}}/api/uploads/image?fileName=171220321168338.png
+Content-Type: application/json
+Authorization: Bearer {adminToken}}
+
+
+

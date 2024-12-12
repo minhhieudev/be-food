@@ -1,0 +1,99 @@
+@baseUrl=http://localhost:3001
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRmZmYxMGVjNWEyZjQwZTIyMGRhNjAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTgyNjA2NDIsImV4cCI6MTcxODM0NzA0Mn0.8BVAdS62Xio3jxG0C4gRiyX6lSvpqdD6KXMCdLR0qlM
+
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ4MGQ3ZjQ4ZGE0NzJmOTIxZGUxNjMiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTY0MzM3MTMsImV4cCI6MTcxNjUyMDExM30.8sacRg4JwzPxm5bmA5Uye2h0ed03jorFj8cA02QUFAc
+
+### Get keyword 
+GET {{baseUrl}}/api/keyword-tools?&isEnabled=true&page=1&pageSize=20&search=$
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Get keyword 
+POST {{baseUrl}}/api/keyword-tools
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+    "keyword": "   Thời tiết              ",
+    "topicCode": "664479e5734794bd9e4aedca",
+    "isEnabled": true
+}
+
+### get by id
+GET {{baseUrl}}/api/keyword-tools/661613e0743373193053876e
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### get by topicCode
+GET {{baseUrl}}/api/keyword-tools/topic-code/66138bb9f0e03ef22d61cb4c?search=thiên&isEnabled=false
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Get keyword 
+PUT {{baseUrl}}/api/keyword-tools/6616144017719a5c2e975935
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+    "isEnabled": true
+}
+
+
+### search keyword by customer
+### query: search, topicIDs
+GET {{baseUrl}}/api/keyword-tools/customer/search?search=M&topicIDs=664479e5734794bd9e4aedca
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+
+### follow a keyword
+PUT {{baseUrl}}/api/keyword-tools/customer/follow
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+{
+    "keywordID": "66138bb9f0e03ef22d61cb4c"
+}
+
+
+
+### Get keyword detail
+### params: keywordID
+GET {{baseUrl}}/api/keyword-tools/customer/6616144017719a5c2e975935
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### Danh sách từ khoá đang theo dõi   
+### query: page, pageSize, search
+GET {{baseUrl}}/api/keyword-tools/customer/followed?search=a&page=1&pageSize=5
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### Danh sách từ khoá nổi bật từ chủ đề đang theo dõi       
+### query: topicID, page, pageSize
+GET {{baseUrl}}/api/keyword-tools/customer/feature?topicID=66138bb9f0e03ef22d61cb4c&page=1&pageSize=5
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### Danh sách từ khoá nổi bật   
+### query: topicID              
+GET {{baseUrl}}/api/keyword-tools/customer/suggested          
+Content-Type: application/json          
+Authorization: Bearer {{customerToken}}             
+                        
+### Nội dung nổi bật                    
+GET {{baseUrl}}/api/keyword-tools/customer/featured-content
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+
+### Get video content 
+GET {{baseUrl}}/api/keyword-tools/video/content?platform=youtube&videoId=STdP66yTQy8
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Get summary video content 
+GET {{baseUrl}}/frontend-api/kwt/video/summary-content?platform=youtube&videoId=CHw1b_1LVBA
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+

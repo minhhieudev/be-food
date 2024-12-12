@@ -1,0 +1,10 @@
+@baseUrl=http://localhost:3001
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ4MGQ3ZjQ4ZGE0NzJmOTIxZGUxNjMiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTYzNjQwMjksImV4cCI6MTcxNjQ1MDQyOX0.vzmd4gAqjeHhE7LjaTHABt3wYyRB0JrAQat0uCEPZLg
+
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAyMzRkYTUwYzNlNzdkNDQzOWExYzMiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxMjExMDQwNSwiZXhwIjoxNzE0NzAyNDA1fQ.K4fAVf-wc-9sAyGoxODarC7APLZcdFzTyfLiWh1HAIM
+
+###
+### query: page, pageSize, fromDate, toDate
+GET {{baseUrl}}/api/payment-activity
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}

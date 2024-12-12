@@ -1,0 +1,33 @@
+@baseUrl=http://localhost:3001
+@accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjNiMmRhNjZmODM5NDkxZWM5MmUxOWMiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxNzgzNzI0OCwiZXhwIjoxNzIwNDI5MjQ4fQ.xQ_MU6q-j5PPezmu2I6u3YOlKv9yI_MX7wAFOnIQz_4
+### Đăng ký tài khoản
+POST {{baseUrl}}/admin-api/admin-auth/register
+Content-Type: application/json
+
+{
+    "username":"demo02",
+    "password":"123456"
+}
+
+### Đăng nhập
+POST {{baseUrl}}/admin-api/admin-auth/login
+Content-Type: application/json
+
+{
+    "username":"demo02",
+    "password":"123456",
+    "login30Days": true
+}
+
+### Say hi
+GET  {{baseUrl}}/admin-api/customer
+Content-Type: application/json
+Authorization: {{accessToken}}
+
+### Doi mat khau
+POST {{baseUrl}}/api/admin-auth/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjA3OWQ5OGNlMmQwZTRiMDg4ZWRiOWMiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxNDcxOTk0NCwiZXhwIjoxNzE5OTAzOTQ0fQ.RxZmA0WS3IZ_oK7YyD8fEhhooiW6KEoRjGuBqM9TvIk"
+}

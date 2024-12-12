@@ -1,0 +1,12 @@
+@baseUrl=http://localhost:3001
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQyZWU0ZWNhYTY0ZThkMjQ2OTZmYTkiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxNjE4MDI4MywiZXhwIjoxNzE4NzcyMjgzfQ.B_RzYUcmb9hMgWSj1KTrhCg4eLW93hycTZVcUM5njtM
+
+
+### Say hi
+POST  {{baseUrl}}/api/keyword-tools/youtube-api-key
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "file": "FILE BUFFER"
+}

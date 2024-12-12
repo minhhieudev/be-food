@@ -1,0 +1,292 @@
+{
+    "loginSuccess": {
+        "vi": "Đăng nhập thành công",
+        "en": "Logged in successfully"
+    },
+    "accountOrPasswordNotCorrect": {
+        "vi": "Tài khoản hoặc mật khẩu không chính xác",
+        "en": "Account or password is incorrect"
+    },
+    "accountLocked": {
+        "vi": "Tài khoản của bạn đã bị khoá.",
+        "en": "Your account has been locked."
+    },
+    "customerBlockedMessage": {
+        "vi": "Tài khoản của bạn đã bị khoá. Bạn không thể thực hiện hành động này.",
+        "en": "Your account has been locked. You cannot perform this action."
+    },
+    "reason": {
+        "vi": "Lý do",
+        "en": "Reason"
+    },
+    "passwordNotSetup": {
+        "vi": "Tài khoản này chưa thiết lập mật khẩu, bạn vui lòng đăng nhập bằng google để thiết lập mật khẩu.",
+        "en": "This account has not set a password, please log in with google to set a password."
+    },
+    "passwordNotCorrect": {
+        "vi": "Mật khẩu không chính xác",
+        "en": "Incorrect password"
+    },
+    "changePasswordSuccess": {
+        "vi": "Đổi mật khẩu thành công",
+        "en": "Password changed successfully"
+    },
+    "accountAlreadyRegistered": {
+        "vi": "Tài khoản này đã được đăng ký",
+        "en": "This account has been registered"
+    },
+    "accountRegistationSuccess": {
+        "vi": "Đăng ký tài khoản thành công",
+        "en": "Account registration successful"
+    },
+    "emailRegistered": {
+        "vi": "Email này đã được đăng ký",
+        "en": "This email has been registered"
+    },
+    "sendOtpSuccess": {
+        "vi": "Gửi mã OTP thành công",
+        "en": "Sending OTP code successfully"
+    },
+    "emailNotRegistation": {
+        "vi": "Email này chưa được đăng ký",
+        "en": "This email is not registered"
+    },
+    "checkOtpByEmail": {
+        "vi": "Vui lòng kiểm tra email để lấy mã OTP. Bạn chỉ có thể gửi lại sau 5 phút",
+        "en": "Please check your email to get the OTP code. You can only resend after 5 minutes"
+    },
+    "verifyOtpSuccess": {
+        "vi": "Xác thực OTP thành công",
+        "en": "OTP authentication successful"
+    },
+    "otpIncorrect": {
+        "vi": "OTP không chính xác hoặc đã hết hạn sử dụng",
+        "en": "OTP is incorrect"
+    },
+    "invalidToken": {
+        "vi": "Token không hợp lệ",
+        "en": "Invalid token"
+    },
+    "tokenExpiredOrNotExist": {
+        "vi": "Token hết hạn hoặc không tồn tại",
+        "en": "Token expired or does not exist"
+    },
+    "accountNotExist": {
+        "vi": "Tài khoản không tồn tại",
+        "en": "Account does not exist"
+    },
+    "updatePasswordSuccess": {
+        "vi": "Cập nhật mật khẩu thành công",
+        "en": "Updated password successfully"
+    },
+    "updateSuccess": {
+        "vi": "Cập nhật thành công",
+        "en": "Update successful"
+    },
+    "getApiKeySuccess": {
+        "vi": "Lấy apiKey thành công",
+        "en": "Get API Key successfully"
+    },
+    "idNotExist": {
+        "vi": "ID không tồn tại",
+        "en": "ID does not exist"
+    },
+    "recoveryUserSuccess": {
+        "vi": "Khôi phục tài khoản người dùng thành công",
+        "en": "User account recovery successful"
+    },
+    "blockUserSuccess": {
+        "vi": "Khoá tài khoản người dùng thành công",
+        "en": "User account locked successfully"
+    },
+    "deleteSuccess": {
+        "vi": "Xoá thành công",
+        "en": "Deleted successfully"
+    },
+    "addSuccess": {
+        "vi": "Thêm mới thành công",
+        "en": "Added successfully"
+    },
+    "notificationCodeNotExist": {
+        "vi": "Mã thông báo không tồn tại",
+        "en": "Token does not exist"
+    },
+    "orderSuccess": {
+        "vi": "Đặt hàng thành công",
+        "en": "Order Success"
+    },
+    "orderNotExist": {
+        "vi": "Đơn hàng không tồn tại",
+        "en": "Order does not exist"
+    },
+    "serviceNotExist": {
+        "vi": "Dịch vụ không tồn tại",
+        "en": "Service does not exist"
+    },
+    "serviceDiscontinued": {
+        "vi": "Dịch vụ đã ngừng bán",
+        "en": "Service has been discontinued"
+    },
+    "quantityMustLarger": {
+        "vi": "Số lượng phải lớn hơn",
+        "en": "The quantity must be larger than "
+    },
+    "quantityMustSmaller": {
+        "vi": "Số lượng phải nhỏ hơn",
+        "en": "The quantity must be smaller than "
+    },
+    "notBlank": {
+        "vi": "không được để trống",
+        "en": "cannot be left blank"
+    },
+    "partnerIdNotEmpty": {
+        "vi": "ID đối tác không được để trống",
+        "en": "Partner ID cannot be empty"
+    },
+    "linkCannotEmpty": {
+        "vi": "Link không được để trống",
+        "en": "Link cannot be empty"
+    },
+    "balanceNotEnough": {
+        "vi": "Số dư tài khoản không đủ, vui lòng nạp thêm tiền",
+        "en": "Account balance is not enough, please add more money"
+    },
+    "customerOrderService": {
+        "vi": "Khách hàng đặt dịch vụ",
+        "en": "Customers order services"
+    },
+    "servicePackageCode": {
+        "vi": "mã dịch vụ",
+        "en": "service code"
+    },
+    "getOrderFailed": {
+        "vi": "Lấy thông tin đơn hàng thất bại",
+        "en": "Get failed order information"
+    },
+    "refundOrder": {
+        "vi": "Hoàn tiền đơn hàng",
+        "en": "Refund order"
+    },
+    "note": {
+        "vi": "ghi chú",
+        "en": "note"
+    },
+    "createPartnerOrderFailed": {
+        "vi": "Tạo đơn hàng đối tác không thành công",
+        "en": "Partner order creation failed"
+    },
+    "createPartnerOrder": {
+        "vi": "Tạo đơn hàng đối tác",
+        "en": "Create partner orders"
+    },
+    "invalidParnerCode": {
+        "vi": "Mã đối tác không hợp lệ",
+        "en": "Invalid partner code"
+    },
+    "paypalNotSetup": {
+        "vi": "Thông tin thanh toán qua Paypal chưa được quản trị viên cài đặt. Vui lòng liên hệ quản trị viên.",
+        "en": "Paypal payment information has not been set by the administrator. Please contact administrator."
+    },
+    "featureMaintance": {
+        "vi": "Tính năng này đang bảo trì. Vui lòng quay lại sau.",
+        "en": "This feature is under maintenance. Please come back later."
+    },
+    "transactionSettled": {
+        "vi": "Giao dịch này đã được thanh toán",
+        "en": "This transaction has been settled"
+    },
+    "at": {
+        "vi": "lúc",
+        "en": "at"
+    },
+    "bonus": {
+        "vi": "Tặng thêm",
+        "en": "Bonus"
+    },
+    "loadedValue": {
+        "vi": "giá trị nạp",
+        "en": "loaded value"
+    },
+    "checkPaypalInvoiceFailed": {
+        "vi": "Kiểm tra hoá đơn Paypal không thành công",
+        "en": "Paypal invoice check failed"
+    },
+    "depositSuccess": {
+        "vi": "Nạp tiền thành công",
+        "en": "Deposit successful"
+    },
+    "depositFailed": {
+        "vi": "Nạp tiền không thành công",
+        "en": "Deposit failed"
+    },
+    "walletNotExist": {
+        "vi": "Ví không tồn tại!",
+        "en": "Wallet does not exist!"
+    },
+    "walletBlocked": {
+        "vi": "Ví của bạn đã bị khoá",
+        "en": "Your wallet has been locked"
+    },
+    "requestDecline": {
+        "vi": "Yêu cầu bị từ chối",
+        "en": "Request denied"
+    }
+    ,
+    "transactionHistoryNotFound": {
+        "vi": "Không tìm thấy lịch sử giao dịch",
+        "en": "No transaction history found"
+    },
+    "serviceGroupNotExist": {
+        "vi": "Nhóm dịch vụ không tồn tại",
+        "en": "The service group does not exist"
+    },
+    "deleteServiceGroupSuccess": {
+        "vi": "Xoá nhóm dịch vụ thành công",
+        "en": "Service group deletion successful"
+    },
+    "serviceNotFound": {
+        "vi": "Không tìm thấy dịch vụ",
+        "en": "Service not found"
+    },
+    "invalidAttributeList": {
+        "vi": "Danh sách thuộc tính không hợp lệ",
+        "en": "Invalid attribute list"
+    },
+    "nameAndCodePropertyRequired": {
+        "vi": "Tên thuộc tính và mã thuộc tính là bắt buộc",
+        "en": "The property name and property code are required"
+    },
+    "attributeNameUnique": {
+        "vi": "Tên thuộc tính không được trùng nhau",
+        "en": "Attribute names cannot be identical"
+    },
+    "attributeCodeUnique": {
+        "vi": "Mã thuộc tính không được trùng nhau",
+        "en": "Attribute codes cannot overlap"
+    },
+    "autoCommentOnlyOneAttribute": {
+        "vi": "Tạo comment tự động chỉ được áp dùng cho 1 thuộc tính",
+        "en": "Automatic comment creation is only applicable to 1 attribute"
+    },
+    "functionNotAvailable": {
+        "vi": "Chức năng này không khả dụng",
+        "en": "This function is not available"
+    },
+    "keywordNotBlank": {
+        "vi": "Từ khoá không được để trống",
+        "en": "Keywords cannot be left blank"
+    },
+    "imageNameNotEmpty": {
+        "vi": "Tên hình ảnh không được để trống",
+        "en": "Image name cannot be empty"
+    },
+    "imageNotFound": {
+        "vi": "Không tìm thấy hình ảnh",
+        "en": "No images found"
+    },
+   
+    "ingredientNotExist":{
+        "vi": "Thành phần không tồn tại",
+        "en": "No Ingredient found"
+    }
+}

@@ -1,0 +1,30 @@
+@baseUrl=http://localhost:3001
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQ4MGQ3ZjQ4ZGE0NzJmOTIxZGUxNjMiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTYzNjE2ODQsImV4cCI6MTcxNjQ0ODA4NH0.SMhvqu03fWqaTisszAEBW-e05XtsJBm3Y3sSlhXeRI0
+
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjNlZWJhY2EwNDQ5NDFiZmU5YzMwYzEiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxNzY2NTYwNywiZXhwIjoxNzIwMjU3NjA3fQ.1WDaDFxCk0LlXHB2NZ9ruJE2e6ClIDHgw6oswHf2bDY
+
+###
+POST {{baseUrl}}/api/payment/recharge
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+{
+  "type": "recharge",
+  "order": {
+    "id": "81904907JK786111K",
+    "type":"paypal"
+  }
+}
+
+### recharge for customer by admin
+POST {{baseUrl}}/api/payment/recharge-by-admin
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+ "customerID": "664724b87854c0853fd6f48e",
+ "note": "Tang tai khoan",
+ "amount": 99999
+}
+
+

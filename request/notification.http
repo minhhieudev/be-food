@@ -1,0 +1,48 @@
+@baseUrl=http://localhost:3001
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRmZmYxMGVjNWEyZjQwZTIyMGRhNjAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2dAZ21haWwuY29tIiwiY3VycmVuY3kiOiJWTkQiLCJpYXQiOjE3MTc5ODM3NDYsImV4cCI6MTcxODA3MDE0Nn0.ybGWUiogTWc_cPDIy7Hxf9dSSUfwzwc02j2B8a_GkMI
+
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjQyZWU0ZWNhYTY0ZThkMjQ2OTZmYTkiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxNjM0MjYyMiwiZXhwIjoxNzE4OTM0NjIyfQ.OPxFRB8e-ssVhOVRvps8dwF07UDFGT4CxpZOZBnPacM
+
+### Hiển thị danh sách thông báo
+### Query: page, pageSize
+GET {{baseUrl}}/api/notifications/customer
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### Hiển thị danh sách thông báo
+### Query: page, pageSize
+GET {{baseUrl}}/api/notifications/
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Thêm thông báo
+POST {{baseUrl}}/api/notifications
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+    "scriptCode": "abc",
+    "content": "9h22"
+}
+
+### Cập nhật thông báo 
+### PUT: 
+PUT {{baseUrl}}/api/notifications/660d1098b44285e22510158c
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+   "scriptCode": "abc1",
+   "content": "abc1"
+}
+
+### Xoá thông báo
+### DELETE: 
+DELETE  {{baseUrl}}/api/notifications/660d1098b44285e22510158c
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+
+
+
+

@@ -1,0 +1,13 @@
+@baseUrl=http://localhost:3001
+
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjIzN2YxYTU3NGQ2NTYyMzJkODdiMjAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2cxQGdtYWlsLmNvbSIsImN1cnJlbmN5IjoiVk5EIiwiaWF0IjoxNzE1Njc1MTg3LCJleHAiOjE3MTU3NjE1ODd9.P0M-27kjwZrHPX78oYyNqheF5J2oVNPHpWiXbZwOzBQ
+
+
+### Get name, channel video by link
+GET {{baseUrl}}/api/geminis/summary-content/youtube/qkPgUgkQE4Y
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+
+
+

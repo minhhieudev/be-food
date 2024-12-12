@@ -1,0 +1,49 @@
+@baseUrl=https://scadmin-api.mstapp.shop
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjIzN2YxYTU3NGQ2NTYyMzJkODdiMjAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2cxQGdtYWlsLmNvbSIsImN1cnJlbmN5IjoiVk5EIiwiaWF0IjoxNzE0NzI2MDY0LCJleHAiOjE3MTQ4MTI0NjR9.55z-5XsF64g7JpvDaPwAAHhyMOlUxwmpTcbYNcY6g1g
+
+### search keyword by customer
+### query: search, topicIDs
+GET {{baseUrl}}/api/keyword-tools/customer/search?search=h&topicIDs=661613e0743373193053876e
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+
+### follow a keyword
+PUT {{baseUrl}}/api/keyword-tools/customer/follow
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+{
+    "keywordID": "661613e0743373193053876e"
+}
+
+### Danh sách từ khoá đang theo dõi   
+GET {{baseUrl}}/api/keyword-tools/customer/followed
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### Get keyword detail
+### params: keywordID
+GET {{baseUrl}}/api/keyword-tools/customer/6616144017719a5c2e975935
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### Danh sách từ khoá nổi bật
+### query: topicID 
+GET {{baseUrl}}/api/keyword-tools/customer/feature?topicID=66138bb9f0e03ef22d61cb4c
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+### follow a topic
+PUT {{baseUrl}}/api/keyword-tools/topic/customer/follow
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+{
+    "topicID": "66138bb9f0e03ef22d61cb4c"
+}
+
+### Get topic followed
+GET {{baseUrl}}/api/keyword-tools/topic/customer/followed
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}

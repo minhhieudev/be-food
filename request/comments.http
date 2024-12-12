@@ -1,0 +1,14 @@
+@baseUrl=http://localhost:3001
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjNkN2M4YmRiOWNjYjFmM2YwNmE1OGUiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2cxQGdtYWlsLmNvbSIsImN1cnJlbmN5IjoiVk5EIiwiaWF0IjoxNzE1Mzk3MzI4LCJleHAiOjE3MTU0ODM3Mjh9.IM_56ZBb3VWSyqH_caiVh47dGGG_YLq_1OC2cDZ1FUE
+
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAyMzRkYTUwYzNlNzdkNDQzOWExYzMiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxMjExMDQwNSwiZXhwIjoxNzE0NzAyNDA1fQ.K4fAVf-wc-9sAyGoxODarC7APLZcdFzTyfLiWh1HAIM
+
+###
+POST {{baseUrl}}/api/comments/generate
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+{
+  "keyword": "MST channel"
+}
+

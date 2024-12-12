@@ -1,0 +1,24 @@
+@baseUrl=http://localhost:3001
+@adminToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjAyMzRkYTUwYzNlNzdkNDQzOWExYzMiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxMTU5OTc5MywiZXhwIjoxNzE0MTkxNzkzfQ.5y4RnB8lDmSQFiuNtMwcApG6pU0cUhMH8I91YWmBsfw
+
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjIzN2YxYTU3NGQ2NTYyMzJkODdiMjAiLCJlbWFpbCI6Im1pbmhodWVob2FuZ2cxQGdtYWlsLmNvbSIsImN1cnJlbmN5IjoiVk5EIiwiaWF0IjoxNzEzOTI1NjU4LCJleHAiOjE3MTQwMTIwNTh9.WTi6GHZna17E-TSUTTYgXz-D7Vgpbjrz4ZEOKyXTLsI
+
+
+### Get keyword 
+DELETE {{baseUrl}}/api/keyword-tools/keyword-statistic
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+### Get keyword 
+GET  {{baseUrl}}/api/keyword-tools/keyword-statistic/run-cron
+Content-Type: application/json 
+Authorization: Bearer {{adminToken}}
+
+
+### Get keyword 
+PUT {{baseUrl}}/api/keyword-tools/keyword-statistic?startDate=2024-04-23
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+
+

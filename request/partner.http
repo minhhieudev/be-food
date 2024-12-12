@@ -1,0 +1,12 @@
+@baseUrl=http://localhost:3001
+@customerToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWZlNGU5YWY0MWI2NmYyODZmNGM0ZjAiLCJ1c2VybmFtZSI6ImRlbW8wMSIsImlhdCI6MTcxNDYzMzc4NSwiZXhwIjoxNzE3MjI1Nzg1fQ.GHS_oUbJ9lfqsoS58Ec_OP-NMCNBSVa_7AXiLNQCBoY
+
+### get balance
+// 1dg.me, ongtrum
+GET {{baseUrl}}/api/partner/balance/ongtrum
+Content-Type: application/json
+Authorization: Bearer {{customerToken}}
+
+
+
+
