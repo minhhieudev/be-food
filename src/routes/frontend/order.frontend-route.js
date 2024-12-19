@@ -2,7 +2,6 @@ import { Router } from "express";
 import ValidateMiddleware from "../../middleware/validate.middleware.js";
 import OrderService from "../../services/order.service.js";
 import {
-  CreateOrderValidate,
   OrderStatusValidate,
 } from "../../validates/order.validate.js";
 

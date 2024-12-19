@@ -11,7 +11,7 @@ class ServicePackageService {
     try {
       const servicePackages = await ServicePackage.find({})
         .lean()
-        .select("_id name price description mainImage status")
+        .select("_id name price description mainImage status serviceTags")
         .populate({
           path: 'subscriptionID',
           select: '-createdAt -updatedAt -__v',

@@ -209,7 +209,7 @@ class MealService {
           .select("-__v -createdAt -updatedAt")
           .populate({
             path: 'customerID',
-            select: 'email',
+            select: 'email info contact',
           })
           .sort({ createdAt: -1 })
           .lean()

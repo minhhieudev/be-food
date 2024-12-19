@@ -27,18 +27,18 @@ class OrderService {
   }
 
   async getSummary(req, res) {
-    // const { servicePackageID } = req.body;
-    // const servicePackageData = await ServicePackage.findOne({
-    //   _id: servicePackageID,
-    // }, 'price').lean()
+    const { servicePackageID } = req.body;
+    const servicePackageData = await ServicePackage.findOne({
+      _id: servicePackageID,
+    }, 'price').lean()
 
     res.status(200).send({
       success: true,
       summary: {
-        // subtotal: servicePackageData.price,
-        // discount: 0,
-        // shippingAmount: 0,
-        // grandTotal: servicePackageData.price,
+        subtotal: servicePackageData.price,
+        discount: 0,
+        shippingAmount: 0,
+        grandTotal: servicePackageData.price,
       }
     });
   }
