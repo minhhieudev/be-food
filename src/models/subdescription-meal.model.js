@@ -18,6 +18,12 @@ const SubscriptionMealSchema = new mongoose.Schema(
       type: Number, 
       required: true, 
     },
+    nutritionInfo: {
+      calories: { type: String },
+      protein: { type: String },
+      carbs: { type: String },
+      fats: { type: String }
+    },
   },
   { timestamps: true } 
 );

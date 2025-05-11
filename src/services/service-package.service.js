@@ -7,7 +7,7 @@ import Setting from "../models/setting.model.js";
 class ServicePackageService {
 
   async getAll(req, res) {
-    console.log('444444444445555555555555555555555555555555555')
+    console.log("getAll");
     try {
       const servicePackages = await ServicePackage.find({})
         .lean()
@@ -660,7 +660,6 @@ class ServicePackageService {
   async getOneByCustomer(req, res) {
     try {
       const { id } = req.params;
-      console.log('888888888888888888888888:',id)
 
       const servicePackage = await ServicePackage.findOne({
         _id: id,
@@ -685,7 +684,6 @@ class ServicePackageService {
         .lean();
 
       if (!servicePackage) throw "Dịch vụ không tồn tại";
-      console.log('7777777777777777777777777:',servicePackage)
 
       res.status(200).send({
         success: true,
@@ -930,3 +928,9 @@ export const getPartnerConditions = async () => {
     return partnerCodeArr;
   }
 };
+
+
+
+
+
+

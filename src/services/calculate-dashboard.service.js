@@ -142,59 +142,59 @@ class CalculateDashboardService {
     }
 
     if (dataType === "money") {
+      const result = await Order.aggregate([
+        {
+          $match: {
+            ...condArr[type],
+          },
+        },
+        {
+          $group: {
+            _id: null,
+            totalValue: { $sum: "$totalPrice" },
+          },
+        },
+      ]).exec();
+      
       data.money = {
-        value: (
-          await Order.aggregate([
-            {
-              $match: {
-                ...condArr[type],
-              },
-            },
-            {
-              $group: {
-                _id: null,
-                totalValue: { $sum: "$totalPrice" },
-              },
-            },
-          ]).exec()
-        )[0].totalValue,
+        value: result && result.length > 0 ? result[0].totalValue : 0
       };
     }
 
     if (dataType === "revenue") {
-      const tempCost = (
-        await Order.aggregate([
-          {
-            $match: {
-              ...condArr[type],
-            },
+      const tempCostResult = await Order.aggregate([
+        {
+          $match: {
+            ...condArr[type],
           },
-          {
-            $group: {
-              _id: null,
-              totalCost: { $sum: "$servicePackage.cost" },
-            },
+        },
+        {
+          $group: {
+            _id: null,
+            totalCost: { $sum: "$servicePackage.cost" },
           },
-        ])
-      )[0].totalCost;
+        },
+      ]);
 
-      const tempTotalPrice = (
-        await Order.aggregate([
-          {
-            $match: {
-              ...condArr[type],
-            },
+      const tempTotalPriceResult = await Order.aggregate([
+        {
+          $match: {
+            ...condArr[type],
           },
-          {
-            $group: {
-              _id: null,
-              totalPrice: { $sum: "$totalPrice" },
-            },
+        },
+        {
+          $group: {
+            _id: null,
+            totalPrice: { $sum: "$totalPrice" },
           },
-        ])
-      )[0].totalPrice;
+        },
+      ]);
+
+      const tempCost = tempCostResult && tempCostResult.length > 0 ? tempCostResult[0].totalCost : 0;
+      const tempTotalPrice = tempTotalPriceResult && tempTotalPriceResult.length > 0 ? tempTotalPriceResult[0].totalPrice : 0;
+      
       data.revenue = {
-        value: tempTotalPrice - tempCost,
+        value: tempTotalPrice - tempCost
       };
     }
     return data;

@@ -18,11 +18,6 @@ class MongoDatabase {
         dbName: config.connections.mongoDBName,
       })
       .then((_) => {
-        console.log(
-          `[${moment(new Date()).format(
-            "HH:mm:ss DD/MM/YYYY"
-          )}] Mongodb connected success!`
-        );
       })
       .catch((error) => {
         console.error(

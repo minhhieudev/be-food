@@ -105,6 +105,10 @@ class SettingService {
         throw "Chức năng này không khả dụng";
       }
 
+      if (!getValue("bankPrefix") || !getValue("bankSuffix")) {
+        throw "Thiếu thông tin cấu hình ngân hàng";
+      }
+
       const baseUrlQR = "https://api.vietqr.io/image/";
       const syntax = `${getValue("bankPrefix")}${user?.paymentCode}${getValue(
         "bankSuffix"
@@ -120,6 +124,10 @@ class SettingService {
       const bankFilter = bankList?.data.filter(
         (bank) => bank.bin == getValue("bankId")
       );
+
+      if (!bankFilter || bankFilter.length === 0) {
+        throw "Không tìm thấy thông tin ngân hàng";
+      }
 
       const bankInfo = {
         bankAccountName: getValue("bankAccountName"),

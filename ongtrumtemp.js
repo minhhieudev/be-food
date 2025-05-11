@@ -5428,7 +5428,7 @@ const convert = () => {
     const servicePackageTemplate = {
       status: true,
       isBestSellers: true,
-      name: "Tên dịch vụ",
+      name: "Tên gói ăn",
       code: "",
       description: "<p></p>",
       orderSuccessDescription: "<p></p>",
@@ -5491,7 +5491,6 @@ const convert = () => {
 
     return servicePackageTemplate;
   });
-  console.log(temp);
 };
 
 convert();

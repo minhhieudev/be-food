@@ -211,7 +211,7 @@ class MealService {
             path: 'customerID',
             select: 'email info contact',
           })
-          .sort({ createdAt: -1 })
+          .sort({ estimatedDate: 1 }) // 1: tăng dần, -1: giảm dần
           .lean()
           .skip(skip)
           .limit(pageSize);
@@ -392,6 +392,8 @@ class MealService {
   async gets(req, res) {
     try {
       const { id } = req.params;
+
+      console.log('Looking for meals with orderID:', id);
 
       const meals = await Meal.find({orderID: id}).sort({ estimatedDate: 1 })
         .lean()

@@ -175,62 +175,33 @@ class PaymentService {
 
   async checkRechargeByBank() {
     try {
+      
+      // Lấy API key ngân hàng
       const accessToken = await Setting.findOne({ key: "apiBankKey" })
         .select("value")
         .lean();
-      if (!accessToken?.value) {
-        return;
-      }
+
+      // Lấy prefix và suffix
+      const [prefix, suffix] = await Promise.all([
+        Setting.findOne({ key: "bankPrefix" }).lean(),
+        Setting.findOne({ key: "bankSuffix" }).lean()
+      ]);
+     
 
       let url = `https://api.apithanhtoan.com/api/history?offset=0&limit=20&memo=&accountNumber=&accessToken=${accessToken.value}&bankCode=vcb`;
-      let rs = await fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data && data.data) {
-            return data;
-          }
-          return null;
-        })
-        .catch((err) => {
-          console.log("Error while get check bank history ", err);
-          return null;
-        });
-
-      if (!rs || !Array.isArray(rs.data)) {
-        console.log("Not found payment results");
-        return;
-      }
-
-      const [prefixSetting, suffixSetting] = await Promise.all([
-        Setting.findOne({ key: "bankPrefix" }).select("value").lean(),
-        Setting.findOne({ key: "bankSuffix" }).select("value").lean()
-      ]);
-
-      let prefix, suffix
-      if (prefixSetting) {
-        prefix = prefixSetting.value
-      }
-      if (suffixSetting) {
-        suffix = suffixSetting.value
-      }
-      if (!prefix || !suffix) {
-        console.info('Missing prefix or suffix setting', {
-          prefix,
-          suffix,
-        })
-        return;
-      }
+      let rs = await fetch(url).then(res => res.json());
 
       for await (let item of rs.data) {
+       
+        // Xử lý nội dung CK
         item.memo = item.memo.toUpperCase();
-        item.memo = item.memo.split('.').pop()
-
-        const pattern = `${prefix}(\\d+)${suffix}`
+        item.memo = item.memo.split('.').pop();
+        const pattern = `${prefix}(\\d+)${suffix}`;
 
         let paymentCode = "";
-        const matched = new RegExp(pattern, 'i').exec(item.memo)
+        const matched = new RegExp(pattern, 'i').exec(item.memo);
         if (matched && matched[1]) {
-          paymentCode = matched[1]
+          paymentCode = matched[1];
         } else {
           continue;
         }
@@ -239,17 +210,16 @@ class PaymentService {
           let totalReCharge = Number(item.money.replace(/[,|+]/g, ""));
           const ref = item.referenceNumber;
 
-          // check exist payment
+          // Kiểm tra giao dịch đã xử lý chưa
           const exist = await PaymentActivity.exists({
             transaction: `$BANK${ref}`,
             type: "bank",
           });
           
           if (exist) {
-            return;
+            continue;
           }
 
-          console.log('-DEBUG- thực hiện nạp tiền cho ', paymentCode)
           const customer = await Customer.findOne({
             paymentCode,
           });
@@ -258,51 +228,31 @@ class PaymentService {
             const wallet = await Wallet.findOne({
               customer: customer._id,
             });
+           
+            // Cập nhật ví
+            await wallet.updateOne({
+              $inc: {
+                balance: totalReCharge,
+                totalRecharged: totalReCharge,
+              },
+            });
 
-            if (wallet) {
-              try {
-                const detailDiscount = await this.calculateAmountAfterDiscount(totalReCharge);
-                const amountAfterDiscount = detailDiscount.newAmount;
-                const newBalance = wallet.balance + amountAfterDiscount;
-                let message = `Nạp thành công ${totalReCharge} VND qua ngân hàng`;
-
-                if (amountAfterDiscount > totalReCharge) {
-                  message += `\nTặng thêm: ${detailDiscount.discountPercent}% giá trị nạp`;
-                }
-
-                // Update wallet, payment activity
-                await Promise.all([
-                  PaymentActivity.create({
-                    transaction: `$BANK${ref}`,
-                    oldBalance: wallet.balance,
-                    newBalance,
-                    customer: customer._id,
-                    wallet: wallet._id,
-                    amount: totalReCharge,
-                    type: "bank",
-                    status: "success",
-                    description: message,
-                    depositDiscountPercent: detailDiscount.discountPercent
-                  }),
-
-                  wallet.updateOne({
-                    $inc: {
-                      totalRecharged: amountAfterDiscount,
-                      balance: amountAfterDiscount,
-                    },
-                  }),
-                ]);
-              } catch (error) {
-                console.log(error);
-              }
-            }
-          } else {
-            console.log("Customer not found");
+            // Ghi log giao dịch
+            await PaymentActivity.create({
+              transaction: `$BANK${ref}`,
+              customer: customer._id,
+              type: "bank",
+              amount: totalReCharge,
+              oldBalance: wallet.balance,
+              newBalance: wallet.balance + totalReCharge,
+              wallet: wallet._id,
+              status: "success",
+            });
           }
         }
       }
     } catch (error) {
-      console.log("error while check payments", error);
+      console.error('LỖI:', error);
     }
   }
 

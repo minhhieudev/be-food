@@ -47,5 +47,4 @@ app.post('/admin-api/api/upload/multiple', upload.array('files', 10), mediaUploa
 
 const PORT = config.app.port || 3000;
 app.listen(PORT, () => {
-  console.log(`Server listen on port: ${PORT}`);
 });

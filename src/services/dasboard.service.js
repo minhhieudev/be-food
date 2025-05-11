@@ -3,6 +3,7 @@ import ServicePackage from "../models/service-package.model.js";
 import instance1DgmeService from "./_1dgme.service.js";
 import OngtrumService from "./ongtrum.service.js";
 import CalculateDashboardService from "./calculate-dashboard.service.js";
+import Order from "../models/order.model.js";
 
 const colors = [
   "#8E44AD",

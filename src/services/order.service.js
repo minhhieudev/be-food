@@ -35,10 +35,10 @@ class OrderService {
     res.status(200).send({
       success: true,
       summary: {
-        subtotal: servicePackageData.price,
+        subtotal: servicePackageData?.price || 0, 
         discount: 0,
         shippingAmount: 0,
-        grandTotal: servicePackageData.price,
+        grandTotal: servicePackageData?.price || 0,
       }
     });
   }

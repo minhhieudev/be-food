@@ -42,5 +42,37 @@
     {
         "key": "PARTNER_1dg.me_API_KEY",
         "value": ""
+    },
+    {
+        "key": "isUseBank",
+        "value": "true"
+    },
+    {
+        "key": "bankPrefix",
+        "value": "CK"
+    },
+    {
+        "key": "bankSuffix",
+        "value": "HC"
+    },
+    {
+        "key": "bankId",
+        "value": "970415"
+    },
+    {
+        "key": "bankAccountName",
+        "value": "VO MINH HIEU"
+    },
+    {
+        "key": "bankAccountNumber",
+        "value": "0788676320"
+    },
+    {
+        "key": "bankQRTemplate",
+        "value": "compact"
+    },
+    {
+        "key": "apiBankKey",
+        "value": ""
     }
 ]

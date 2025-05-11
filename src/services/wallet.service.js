@@ -11,7 +11,6 @@ class WalletService {
         data: { wallet: customer },
       });
 
-    console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',customer)
 
     } catch (error) {
       console.log("error: ", error);
