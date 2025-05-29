@@ -324,7 +324,6 @@ const checkOrderPaypal = async (orderId, username, password) => {
       });
 
       if (checkOrder.status == HttpStatusCode.Ok) {
-        console.log(checkOrder.data);
         return {
           status: checkOrder.data.status,
           amount: Number(checkOrder.data.purchase_units[0].amount.value),

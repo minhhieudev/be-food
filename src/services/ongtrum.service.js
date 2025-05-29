@@ -28,7 +28,6 @@ class OngtrumService {
           ...data,
         },
       }
-      console.log(requestConfig);
       const response = await axios.request(requestConfig);
    
       if (response.data?.error) {

@@ -113,7 +113,6 @@ class PerfectMoneyService {
         .select("value")
         .lean();
 
-      console.log("logs perfect money: ", logs);
       if (!setting) {
         throw translations.paypalNotSetup[lang];
       }

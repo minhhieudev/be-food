@@ -12,20 +12,12 @@ const memoryCache = await caching("memory", {
 class MealService {
 
   async updateFavoriteIngredients(req, res) {
-    console.log('--- updateFavoriteIngredients called ---');
-  
     const { favoriteIngredients, mealID } = req.body;
-  
-    console.log('Request body received:', req.body);
-    console.log('Parsed favoriteIngredients:', favoriteIngredients);
-    console.log('Parsed mealID:', mealID);
   
     try {
       if (favoriteIngredients && mealID) {
         // 1. Lấy tài liệu trước khi cập nhật
         const mealBeforeUpdate = await Meal.findOne({ _id: mealID });
-  
-        console.log('favoriteIngredients before update:', mealBeforeUpdate.favoriteIngredients);
   
         // 2. Cập nhật tài liệu
         const updateResult = await Meal.updateOne(
@@ -38,9 +30,6 @@ class MealService {
           console.log('Update successful!');
   
           // 3. Lấy tài liệu sau khi cập nhật
-          const mealAfterUpdate = await Meal.findOne({ _id: mealID });
-  
-          console.log('favoriteIngredients after update:', mealAfterUpdate.favoriteIngredients);
   
           return res.status(200).json({
             success: true,
@@ -73,14 +62,8 @@ class MealService {
   
 
   async updateDeliveryTime (req, res) {
-    console.log('date')
-
     const { estimatedDate, estimatedTime, mealID } = req.body
-    console.log('estimatedDate:', estimatedDate)
-    console.log('estimatedTime:', estimatedTime)
-    console.log('mealID:', mealID)
-
-
+   
     try {
       if (estimatedDate && estimatedTime && mealID) {
         // TODO validate data
@@ -102,13 +85,7 @@ class MealService {
   }
 
   async addReview (req, res) {
-    console.log('rewwiew')
-
     const { rating, content, mealID, customerID } = req.body
-    console.log('customerID:', customerID || req.user._id)
-    console.log('mealID:', mealID)
-    console.log('content:', content)
-    console.log('rating:', rating)
     const customerIDNew = customerID || req.user._id;
 
     try {
@@ -144,10 +121,7 @@ class MealService {
   }
 
   async cancelMeal (req, res) {
-    console.log('cancel',req.body)
-
     const { mealID } = req.body
-    console.log('mealID:', mealID)
 
     try {
       if (mealID) {
@@ -171,7 +145,6 @@ class MealService {
   }
   
   async getAll(req, res) {
-    console.log('nnnnnnnnnnnnnnnnnnnnn')
     try {
       const page = parseInt(req.query.page) || 1;
       const pageSize = parseInt(req.query.pageSize) || 20;
@@ -393,14 +366,10 @@ class MealService {
     try {
       const { id } = req.params;
 
-      console.log('Looking for meals with orderID:', id);
-
       const meals = await Meal.find({orderID: id}).sort({ estimatedDate: 1 })
         .lean()
         .sort({ createdAt: -1 })
         .select("-__v -createdAt -updatedAt ")
-
-      console.log('Dataaa:',meals[0]);
 
       res.status(200).json({
         success: true,
@@ -421,14 +390,9 @@ class MealService {
 
 
   async updateStatus(req, res) {
-    console.log('updateStatus66666666666667777777777777777777777777');
     const { id } = req.params;
-
     const { status } = req.body;
-    console.log('id.id:', id);
-    console.log('status:', status);
-
-
+ 
     try {
         if (!id || !status) {
             return res.status(400).json({

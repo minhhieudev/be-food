@@ -1,19 +1,12 @@
 import IngredientGroup from "../models/ingredient-group.js";
-import { caching } from "cache-manager";
-import ToolServerAdapter from "../lib/tool-server-api.js";
-import _1DgmeService from "./_1dgme.service.js";
-
-
 class ServiceGroupService {
  
   async create(req, res) {
-    console.log('123')
     try {
       const data = req.body;
       const newData = {
         name: data.name,
       };
-      console.log(req.body)
 
       const newIngredientGroup = await IngredientGroup.create(newData);
 

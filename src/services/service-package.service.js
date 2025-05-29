@@ -7,7 +7,6 @@ import Setting from "../models/setting.model.js";
 class ServicePackageService {
 
   async getAll(req, res) {
-    console.log("getAll");
     try {
       const servicePackages = await ServicePackage.find({})
         .lean()

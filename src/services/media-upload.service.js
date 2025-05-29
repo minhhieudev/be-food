@@ -45,7 +45,6 @@ class MediaUploadService {
 
   async uploadVideoTemp(req, res) {
     try {
-      console.log(req.file);
       const file = req.file;
       const result = await cloudinaryService.uploadMedia(file.buffer, 'temp/videos', 'video')
       return res

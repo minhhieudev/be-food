@@ -116,10 +116,8 @@ class AdminAuthService {
 
   async login(req, res) {
     try {
-      const { email, password, login30Days } = req.body;
+      const { password, login30Days } = req.body;
 
-      console.log('KKKKKK:',password)
-      console.log('KKKKKK555:',email)
       // if (email.length < 6) {
       //   throw "Tài khoản hoặc mật khẩu không đúng";
       // }
@@ -131,7 +129,6 @@ class AdminAuthService {
 
       // xử lý login
       const admin = await Admin.findOne({  });
-      console.log('KKKKKK555:66666666666666666666666666666666666666',admin)
 
       if (!admin || !(await admin.comparePassword(password))) {
 

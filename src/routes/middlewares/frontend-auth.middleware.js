@@ -2,7 +2,6 @@ import jwt from "jsonwebtoken";
 import config from "../../configs/config.js";
 
 async function FrontendAuthMiddleware(req, res, next) {
-  console.log('Header:',req.headers);
   try {
     const authHeader = req.headers.authorization || "";
     const token = authHeader.replace("Bearer ", "").trim();

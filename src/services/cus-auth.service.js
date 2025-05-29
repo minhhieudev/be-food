@@ -11,7 +11,6 @@ import translations from "../common/translate-mess-response.json" assert { type:
 const otpSecret = "mstOtpSecret";
 class CusAuthService {
   async loginByGoogle(req, res) {
-    console.log('LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL')
     try {
       const lang = req.header.lang;
       const { token } = req.body;
@@ -96,7 +95,6 @@ class CusAuthService {
   }
 
   async login(req, res) {
-    console.log('LOGINNNNNNNNNNNNNNNNNNNNNNNNNN')
 
     try {
       const lang = req.header.lang;
@@ -206,8 +204,7 @@ class CusAuthService {
   async profile(req, res) {
     try {
       const { contact, info } = req.body;
-      console.log('req.bodyreq.bodyreq.body', req.body)
-      console.log('infoinfoinfoinfoinfo', info)
+   
       const user = req.user;
       const lang = req.header.lang;
       const customer = await Customer.findOne({ _id: user._id });
@@ -238,17 +235,10 @@ class CusAuthService {
 
     try {
       const { email, password } = req.body;
-      console.log("Email:666666666666666666666666666666666", req.body)
-
       const lang = req.header.lang;
-
 
       const checkCustomer = await Customer.findOne({ email }).lean();
       if (checkCustomer) throw translations.accountAlreadyRegistered[lang];
-
-      console.log("Email:", email)
-      console.log("Password:", password)
-
 
       // Add user
       const customer = new Customer({
